@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="partials/partials.html :: head('Welcome')"></head>
+<body>
+<nav th:replace="partials/partials.html :: nav"></nav>
+<header th:replace="partials/partials.html :: header('Welcome to the Spring Blog')"></header>
+<main class="container">
+    ...
+</main>
+<th:block th:replace="partials/partials.html :: scripts"></th:block>
+</body>
+</html>

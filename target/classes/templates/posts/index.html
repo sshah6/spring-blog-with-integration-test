@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="partials/partials.html :: head('All Posts')"></head>
+<body>
+<nav th:replace="partials/partials.html :: nav"></nav>
+<header th:replace="partials/partials.html :: header('Posts')"></header>
+<main class="container">
+    <div class="row gy-4">
+        <div class="col-12 col-md-6" th:each="post : ${posts}">
+            <article class="card">
+                <div class="card-body">
+                    <h3 class="card-title" th:text="${post.title}"></h3>
+                    <p>By <span th:text="${post.user.username}"></span></p>
+                    <p th:text="${post.body}"></p>
+                    <a th:href="@{/posts/{id}(id=${post.id})}">Read more</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    <th:block th:replace="partials/partials.html :: scripts"></th:block>
+</main>
+</body>
+</html>
